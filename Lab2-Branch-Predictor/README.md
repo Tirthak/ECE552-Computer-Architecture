@@ -1,11 +1,10 @@
 Overview:
 ============
 
-Uses the Championship Branch Predictor to simulate the the number of mispredictions  
-per thousand instructions (MPKI) of the following predictors:  
+Uses the Championship Branch Predictor to simulate the the MPKI of the following predictors:  
 * An 8K Bimodal Predictor with a 2-bit saturating counter
 * A 4K PAp Predictor with 512 Branch History Entries and 8 Private History Tables
-* A 128K TAGE Predictor that uses PAp as it's base predictor (T0) 
+* A 128K 8-Component TAGE Predictor that uses PAp as it's base predictor (T0) 
 
 The above implementations can be viewed in greater detail in <code>predictor.cc</code>
 
