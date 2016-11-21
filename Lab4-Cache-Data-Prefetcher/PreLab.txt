@@ -1,0 +1,22 @@
+ECE552 Lab 4 Prep
+November 10, 2016
+
+1. Would a next line-prefetcher work well for an instruction cache? When would it issue useless prefetches?
+
+A nextline prefetcher would work very well for an instruction cache as it would essentially fetch the next instruction. It would issue useless prefetches whenever there is a branch/jump/call instruction  which is TAKEN.
+
+
+
+
+2. Can data prefetching be harmful for the performance of a system? Provide an example.
+
+Data prefetching can be harmful to the performance of a system if it keep fetching useless data and overwrites useful data in the process due to lack of available space or poor replacement algorithm. For instance, when there is frequent direct branching in a loop, the stide or other useful data might get constantly overwritten because of the constantly prefetching of spacially nearby data in data and instruction cache which will prove useless in this scenario. 
+
+
+
+
+3. How could you address the issue of harmful prefetches, assuming you cannot turn off your data prefetcher?
+
+Two methods can be used to address this issue:
+a. Split the main cache and prefetches cache. This would ensure that the prefetches would never overwrite useful data from the main cache. However, this might impact the performace negatively as the main cache is halved in space.
+b. Choose a replacment policy which favours the most useful data. It tracks which data is the least useful and only replaces that when prefetching.
